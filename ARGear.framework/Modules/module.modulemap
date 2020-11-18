@@ -1,0 +1,6 @@
+framework module ARGear {
+  umbrella header "ARGear.h"
+
+  export *
+  module * { export * }
+}

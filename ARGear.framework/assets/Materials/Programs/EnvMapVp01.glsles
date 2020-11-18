@@ -1,0 +1,29 @@
+precision highp float;
+uniform mat4    u_mvMatrix; // ModelView Matrix
+uniform mat4    u_mvpMatrix; // ModelViewProjection Matrix
+
+attribute vec4 vertex;
+attribute vec3 normal;
+
+varying vec3 v_eyecoordEyeReflection;
+
+vec3 v_eyecoordPosition;
+vec3 v_eyecoordNormal;
+
+void main()
+ {
+    // position and normal in model coordinates
+    vec4 modelCoordPosition = vertex;
+    vec3 modelCoordNormal   = normal;
+
+    // Calculate position in eye space
+    v_eyecoordPosition = vec3(u_mvMatrix * modelCoordPosition);
+
+    // Calculate and normalize eye space normal
+    vec3 eyecoordNormal    = vec3(u_mvMatrix * vec4(modelCoordNormal, 0.0));
+    v_eyecoordNormal        = normalize(eyecoordNormal);
+    // Calculate reflection vector
+    v_eyecoordEyeReflection = reflect(v_eyecoordPosition, v_eyecoordNormal);
+
+    gl_Position = u_mvpMatrix * vertex;
+}

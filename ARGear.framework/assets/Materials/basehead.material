@@ -1,0 +1,25 @@
+material lambert1
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.00 0.00 0.00 1.00
+			specular 0 0 0 1
+			emissive 0 0 0
+            // colour_write off
+			depth_write on
+			
+            vertex_program_ref VP/Base/GLSLES
+            {
+            }
+           fragment_program_ref FP/Base/Color
+			{
+				param_named lightPosition float4 -40.0 -80.0 500.0
+				// param_named colour float4 1.0 1.0 1.0 10.0
+				param_named colour float4 1.0 1.0 1.0 0.0
+			} 
+		}
+	}
+}

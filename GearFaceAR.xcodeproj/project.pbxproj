@@ -13,18 +13,18 @@
 		8356FB972565DD340055BDB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8356FB952565DD340055BDB2 /* Main.storyboard */; };
 		8356FB992565DD3A0055BDB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8356FB982565DD3A0055BDB2 /* Assets.xcassets */; };
 		8356FB9C2565DD3A0055BDB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8356FB9A2565DD3A0055BDB2 /* LaunchScreen.storyboard */; };
-		8356FBA62565DDBA0055BDB2 /* ARGear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8356FBA52565DDBA0055BDB2 /* ARGear.framework */; };
-		8356FBA72565DDBA0055BDB2 /* ARGear.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8356FBA52565DDBA0055BDB2 /* ARGear.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8356FBAF2565E6040055BDB2 /* ARGear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8356FBAE2565E6040055BDB2 /* ARGear.framework */; };
+		8356FBB02565E6040055BDB2 /* ARGear.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8356FBAE2565E6040055BDB2 /* ARGear.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8356FBA82565DDBA0055BDB2 /* Embed Frameworks */ = {
+		8356FBB12565E6040055BDB2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8356FBA72565DDBA0055BDB2 /* ARGear.framework in Embed Frameworks */,
+				8356FBB02565E6040055BDB2 /* ARGear.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,7 +40,7 @@
 		8356FB982565DD3A0055BDB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8356FB9B2565DD3A0055BDB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8356FB9D2565DD3A0055BDB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8356FBA52565DDBA0055BDB2 /* ARGear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARGear.framework; path = ../../../Downloads/ARGear.framework; sourceTree = "<group>"; };
+		8356FBAE2565E6040055BDB2 /* ARGear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARGear.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8356FBA62565DDBA0055BDB2 /* ARGear.framework in Frameworks */,
+				8356FBAF2565E6040055BDB2 /* ARGear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		8356FBA42565DDBA0055BDB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8356FBA52565DDBA0055BDB2 /* ARGear.framework */,
+				8356FBAE2565E6040055BDB2 /* ARGear.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 				8356FB882565DD340055BDB2 /* Sources */,
 				8356FB892565DD340055BDB2 /* Frameworks */,
 				8356FB8A2565DD340055BDB2 /* Resources */,
-				8356FBA82565DDBA0055BDB2 /* Embed Frameworks */,
+				8356FBB12565E6040055BDB2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,7 +317,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54GQFS3JDD;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GearFaceAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,7 +342,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54GQFS3JDD;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GearFaceAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

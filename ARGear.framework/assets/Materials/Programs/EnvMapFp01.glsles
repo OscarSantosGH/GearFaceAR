@@ -1,0 +1,9 @@
+precision highp float;
+uniform lowp samplerCube s_environmentMap;
+// uniform lowp sampler2D s_environmentMap;
+varying vec3 v_eyecoordEyeReflection;
+
+void main()
+{
+    gl_FragColor  = textureCube(s_environmentMap, v_eyecoordEyeReflection);
+}
