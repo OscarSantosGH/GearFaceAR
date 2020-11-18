@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>GearFaceAR used the camera to create incredible AR experience</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>GearFaceAR used the mic to record the audio of the videos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>GearFaceAR has the hability to save photos in your library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>GearFaceAR has the hability to save photos in your library</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -52,8 +60,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
