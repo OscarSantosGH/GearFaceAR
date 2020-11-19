@@ -16,6 +16,10 @@ let API_AUTH_KEY = "U2FsdGVkX1+h5jjopWLhGL0SysmPHFpPAmpNHZAdwJL3f1NqnAeiMQRa/xAH
 class MainViewController: UIViewController {
     
     var argSession: ARGSession?
+    
+    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var consoleLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +49,12 @@ class MainViewController: UIViewController {
         argSession?.run()
     }
     
-
-
+    @IBAction func beautyAction(_ sender: Any) {
+    }
+    
+    @IBAction func filterAction(_ sender: Any) {
+    }
+    
 }
 
 extension MainViewController: ARGSessionDelegate{
