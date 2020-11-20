@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		834D991925677A0C0056444C /* ARGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D991825677A0C0056444C /* ARGScene.swift */; };
 		8356FB902565DD340055BDB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8356FB8F2565DD340055BDB2 /* AppDelegate.swift */; };
 		8356FB922565DD340055BDB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8356FB912565DD340055BDB2 /* SceneDelegate.swift */; };
 		8356FB942565DD340055BDB2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8356FB932565DD340055BDB2 /* MainViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		834D991825677A0C0056444C /* ARGScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGScene.swift; sourceTree = "<group>"; };
 		8356FB8C2565DD340055BDB2 /* GearFaceAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GearFaceAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8356FB8F2565DD340055BDB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8356FB912565DD340055BDB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				8356FB982565DD3A0055BDB2 /* Assets.xcassets */,
 				8356FB9A2565DD3A0055BDB2 /* LaunchScreen.storyboard */,
 				8356FB9D2565DD3A0055BDB2 /* Info.plist */,
+				834D991825677A0C0056444C /* ARGScene.swift */,
 			);
 			path = GearFaceAR;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8356FB942565DD340055BDB2 /* MainViewController.swift in Sources */,
+				834D991925677A0C0056444C /* ARGScene.swift in Sources */,
 				8356FB902565DD340055BDB2 /* AppDelegate.swift in Sources */,
 				8356FB922565DD340055BDB2 /* SceneDelegate.swift in Sources */,
 			);
