@@ -1,0 +1,6 @@
+framework module ARGearRenderer {
+  umbrella header "ARGearRenderer.h"
+
+  export *
+  module * { export * }
+}

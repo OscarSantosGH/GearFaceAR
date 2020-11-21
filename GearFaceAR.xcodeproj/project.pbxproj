@@ -14,18 +14,19 @@
 		8356FB972565DD340055BDB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8356FB952565DD340055BDB2 /* Main.storyboard */; };
 		8356FB992565DD3A0055BDB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8356FB982565DD3A0055BDB2 /* Assets.xcassets */; };
 		8356FB9C2565DD3A0055BDB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8356FB9A2565DD3A0055BDB2 /* LaunchScreen.storyboard */; };
-		8356FBAF2565E6040055BDB2 /* ARGear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8356FBAE2565E6040055BDB2 /* ARGear.framework */; };
-		8356FBB02565E6040055BDB2 /* ARGear.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8356FBAE2565E6040055BDB2 /* ARGear.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		839DE0072568A4F6007DAEC0 /* ARGearRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839DE0052568A4F1007DAEC0 /* ARGearRenderer.framework */; };
+		839DE0082568A4F6007DAEC0 /* ARGearRenderer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 839DE0052568A4F1007DAEC0 /* ARGearRenderer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		839DE00B2568A593007DAEC0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DE00A2568A593007DAEC0 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8356FBB12565E6040055BDB2 /* Embed Frameworks */ = {
+		839DE0092568A4F6007DAEC0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8356FBB02565E6040055BDB2 /* ARGear.framework in Embed Frameworks */,
+				839DE0082568A4F6007DAEC0 /* ARGearRenderer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +43,8 @@
 		8356FB982565DD3A0055BDB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8356FB9B2565DD3A0055BDB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8356FB9D2565DD3A0055BDB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8356FBAE2565E6040055BDB2 /* ARGear.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARGear.framework; sourceTree = "<group>"; };
+		839DE0052568A4F1007DAEC0 /* ARGearRenderer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARGearRenderer.framework; sourceTree = "<group>"; };
+		839DE00A2568A593007DAEC0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8356FBAF2565E6040055BDB2 /* ARGear.framework in Frameworks */,
+				839DE0072568A4F6007DAEC0 /* ARGearRenderer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +87,7 @@
 				8356FB9A2565DD3A0055BDB2 /* LaunchScreen.storyboard */,
 				8356FB9D2565DD3A0055BDB2 /* Info.plist */,
 				834D991825677A0C0056444C /* ARGScene.swift */,
+				839DE00A2568A593007DAEC0 /* NetworkManager.swift */,
 			);
 			path = GearFaceAR;
 			sourceTree = "<group>";
@@ -92,7 +95,7 @@
 		8356FBA42565DDBA0055BDB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8356FBAE2565E6040055BDB2 /* ARGear.framework */,
+				839DE0052568A4F1007DAEC0 /* ARGearRenderer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,7 +110,7 @@
 				8356FB882565DD340055BDB2 /* Sources */,
 				8356FB892565DD340055BDB2 /* Frameworks */,
 				8356FB8A2565DD340055BDB2 /* Resources */,
-				8356FBB12565E6040055BDB2 /* Embed Frameworks */,
+				839DE0092568A4F6007DAEC0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +173,7 @@
 			files = (
 				8356FB942565DD340055BDB2 /* MainViewController.swift in Sources */,
 				834D991925677A0C0056444C /* ARGScene.swift in Sources */,
+				839DE00B2568A593007DAEC0 /* NetworkManager.swift in Sources */,
 				8356FB902565DD340055BDB2 /* AppDelegate.swift in Sources */,
 				8356FB922565DD340055BDB2 /* SceneDelegate.swift in Sources */,
 			);

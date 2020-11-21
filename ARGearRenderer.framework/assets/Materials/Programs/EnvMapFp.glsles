@@ -1,0 +1,31 @@
+precision highp float;
+
+// Environment map
+uniform highp sampler2D s_environmentMap;
+// uniform lowp samplerCube s_environmentMap;
+uniform float opacity;
+uniform vec3 color;
+// Varyings
+varying vec3 v_ecPosition;
+varying vec3 v_ecNormal;
+
+void main() { 
+    
+    // Normalize v_ecNormal
+    vec3 ecNormal = v_ecNormal / length(v_ecNormal);
+     ecNormal = ecNormal*3.8;
+    
+    // Calculate reflection vector
+    vec3 ecEyeReflection = reflect(v_ecPosition, ecNormal);
+    ecEyeReflection = ecEyeReflection*0.5;
+    // Sample environment color
+    vec4 environmentColor = texture2DProj(s_environmentMap, ecEyeReflection);
+    // vec4 environmentColor = textureCube(s_environmentMap, ecEyeReflection);
+    
+    gl_FragColor = environmentColor;
+    gl_FragColor.r = gl_FragColor.r*color.x;
+    gl_FragColor.g = gl_FragColor.g*color.y;
+    gl_FragColor.b = gl_FragColor.b*color.z;
+    gl_FragColor.a = gl_FragColor.a*opacity;
+
+}
