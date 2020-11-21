@@ -12,6 +12,7 @@ import ARKit
 
 typealias ARGSceneRenderUpdateAtTimeHandler = (SCNSceneRenderer, TimeInterval) -> Void
 typealias ARGSceneRenderDidRenderSceneHandler = (SCNSceneRenderer, SCNScene, TimeInterval) -> Void
+
 typealias ARGSceneSessionDidUpdateFrameHandler = (ARSession, ARFrame) -> Void
 
 class ARGScene: NSObject {
@@ -22,14 +23,10 @@ class ARGScene: NSObject {
     
     lazy var sceneView = ARSCNView()
     
+    var objectNodes: [SCNNode] = []
+    
     init(viewContainer: UIView?){
         super.init()
-        
-//        guard
-//          let scene = SCNScene(named: "face.scn")
-//        else {
-//            fatalError("Failed to load face scene!")
-//        }
         
         let scene = SCNScene()
 
@@ -44,15 +41,19 @@ class ARGScene: NSObject {
             sceneView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             sceneView.backgroundColor = .clear
             sceneView.layer.transform = CATransform3DMakeScale(1, 1, 1)
-            sceneView.isUserInteractionEnabled = false
-            if #available(iOS 11.0, *) {
-                sceneView.rendersContinuously = true
-            }
-            viewContainer.addSubview(sceneView)
+            sceneView.isUserInteractionEnabled = true
+            
         }
+        
+        self.setupSession()
+    }
+    
+    func setupSession() {
+        
         let arkitFaceTrackingConfig = ARFaceTrackingConfiguration()
         sceneView.session.run(arkitFaceTrackingConfig, options: [.removeExistingAnchors, .resetTracking])
     }
+    
 }
 
 extension ARGScene: ARSCNViewDelegate {
@@ -73,35 +74,13 @@ extension ARGScene: ARSCNViewDelegate {
         handler(renderer, scene, time)
     }
     
-//    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-//
-//        guard let planeAnchor = anchor as? ARPlaneAnchor
-//            else { return }
-//
-//        let plane = Plane(anchor: planeAnchor, in: sceneView)
-//        node.addChildNode(plane)
-//    }
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+
+    }
     
-//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-//
-//        guard let planeAnchor = anchor as? ARPlaneAnchor,
-//            let plane = node.childNodes.first as? Plane
-//            else { return }
-//
-//        // Update ARSCNPlaneGeometry to the anchor's new estimated shape.
-//        if #available(iOS 11.3, *) {
-//            if let planeGeometry = plane.meshNode.geometry as? ARSCNPlaneGeometry {
-//                planeGeometry.update(from: planeAnchor.geometry)
-//            }
-//        }
-//
-//        // Update extent visualization to the anchor's new bounding rectangle.
-//        if let extentGeometry = plane.extentNode.geometry as? SCNPlane {
-//            extentGeometry.width = CGFloat(planeAnchor.extent.x)
-//            extentGeometry.height = CGFloat(planeAnchor.extent.z)
-//            plane.extentNode.simdPosition = planeAnchor.center
-//        }
-//    }
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        
+   }
 }
 
 extension ARGScene: ARSessionDelegate {
