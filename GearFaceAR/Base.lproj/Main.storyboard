@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,20 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgo-H7-k6l">
-                                <rect key="frame" x="0.0" y="117" width="414" height="474"/>
+                                <rect key="frame" x="0.0" y="117" width="414" height="530"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="474" id="gEe-iR-LRP"/>
+                                    <constraint firstAttribute="height" constant="530" id="gEe-iR-LRP"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GearFace AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-fa-glH">
                                 <rect key="frame" x="162" y="60" width="135" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="9Il-BP-rM4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="9Il-BP-rM4"/>
                                     <constraint firstAttribute="height" constant="49" id="QDf-EN-XoA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lJ1-7m-Khx">
@@ -43,81 +42,138 @@
                                     <constraint firstAttribute="width" constant="50" id="y6C-xt-EG0"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2X-0S-GZi">
-                                <rect key="frame" x="20" y="611" width="139" height="50"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUn-5R-PC5" userLabel="controlsContainer">
+                                <rect key="frame" x="20" y="662" width="374" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkd-AR-bG7" userLabel="beautyControlsView">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-yP-II4">
+                                                <rect key="frame" x="0.0" y="111" width="374" height="54"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUv-Dm-obT" userLabel="skinBtn" customClass="FilterButton" customModule="GearFaceAR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
+                                                        <state key="normal" image="skinOff"/>
+                                                        <state key="selected" image="skin"/>
+                                                        <connections>
+                                                            <action selector="selectFilterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LEg-Yd-Y6V"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD4-aE-mlV" userLabel="chinBtn" customClass="FilterButton" customModule="GearFaceAR" customModuleProvider="target">
+                                                        <rect key="frame" x="64" y="0.0" width="54" height="54"/>
+                                                        <state key="normal" image="chinOff"/>
+                                                        <state key="selected" image="chin"/>
+                                                        <connections>
+                                                            <action selector="selectFilterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z31-q0-gXO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBz-Ee-0uA" userLabel="eyesBtn" customClass="FilterButton" customModule="GearFaceAR" customModuleProvider="target">
+                                                        <rect key="frame" x="128" y="0.0" width="54" height="54"/>
+                                                        <state key="normal" image="eyesSizeOff"/>
+                                                        <state key="selected" image="eyesSize"/>
+                                                        <connections>
+                                                            <action selector="selectFilterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qE4-UY-1Lx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOl-gb-0V5" userLabel="circlesBtn" customClass="FilterButton" customModule="GearFaceAR" customModuleProvider="target">
+                                                        <rect key="frame" x="192" y="0.0" width="54" height="54"/>
+                                                        <state key="normal" image="darkCircleOff"/>
+                                                        <state key="selected" image="darkCircle"/>
+                                                        <connections>
+                                                            <action selector="selectFilterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hH8-nD-muo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIU-Jd-enS" userLabel="noseBtn" customClass="FilterButton" customModule="GearFaceAR" customModuleProvider="target">
+                                                        <rect key="frame" x="256" y="0.0" width="54" height="54"/>
+                                                        <state key="normal" image="noseOff"/>
+                                                        <state key="selected" image="nose"/>
+                                                        <connections>
+                                                            <action selector="selectFilterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r8a-4U-Uk4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ut8-BS-t2h" userLabel="mouthBtn" customClass="FilterButton" customModule="GearFaceAR" customModuleProvider="target">
+                                                        <rect key="frame" x="320" y="0.0" width="54" height="54"/>
+                                                        <state key="normal" image="mouthOff"/>
+                                                        <state key="selected" image="mouth"/>
+                                                        <connections>
+                                                            <action selector="selectFilterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sPQ-Bp-wnd"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="54" id="6Ab-bB-yS7"/>
+                                                </constraints>
+                                            </stackView>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-Fg-C9N">
+                                                <rect key="frame" x="-2" y="45" width="332" height="27"/>
+                                                <connections>
+                                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="AUM-iS-0Y3"/>
+                                                </connections>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHH-Qt-eU3">
+                                                <rect key="frame" x="349" y="45" width="25" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="GVy-Kt-6T9"/>
+                                                    <constraint firstAttribute="height" constant="26" id="mxh-DH-LdH"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="gobackward" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gR2-fM-4wf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="QHH-Qt-eU3" firstAttribute="leading" secondItem="hCo-Fg-C9N" secondAttribute="trailing" constant="21" id="2Hv-K0-XbW"/>
+                                            <constraint firstItem="gPc-yP-II4" firstAttribute="top" secondItem="hCo-Fg-C9N" secondAttribute="bottom" constant="40" id="FWy-Pd-YbN"/>
+                                            <constraint firstItem="QHH-Qt-eU3" firstAttribute="top" secondItem="hCo-Fg-C9N" secondAttribute="top" id="KCQ-GD-U7E"/>
+                                            <constraint firstItem="hCo-Fg-C9N" firstAttribute="top" secondItem="fkd-AR-bG7" secondAttribute="top" constant="45" id="NBV-wz-pNY"/>
+                                            <constraint firstAttribute="trailing" secondItem="gPc-yP-II4" secondAttribute="trailing" id="Oi0-Co-rTF"/>
+                                            <constraint firstAttribute="trailing" secondItem="QHH-Qt-eU3" secondAttribute="trailing" id="PpI-Jx-ZUJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="gPc-yP-II4" secondAttribute="bottom" constant="35" id="dpB-QL-CJp"/>
+                                            <constraint firstItem="hCo-Fg-C9N" firstAttribute="leading" secondItem="fkd-AR-bG7" secondAttribute="leading" id="tKp-W8-f8B"/>
+                                            <constraint firstItem="gPc-yP-II4" firstAttribute="leading" secondItem="fkd-AR-bG7" secondAttribute="leading" id="tlc-ob-KNW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4SP-Mx-Rjd"/>
-                                    <constraint firstAttribute="width" constant="139" id="9QC-GX-YNM"/>
+                                    <constraint firstItem="fkd-AR-bG7" firstAttribute="leading" secondItem="uUn-5R-PC5" secondAttribute="leading" id="INu-uy-WI2"/>
+                                    <constraint firstItem="fkd-AR-bG7" firstAttribute="top" secondItem="uUn-5R-PC5" secondAttribute="top" id="SN9-Kz-Mlp"/>
+                                    <constraint firstAttribute="height" constant="200" id="f8H-sA-EVu"/>
+                                    <constraint firstAttribute="trailing" secondItem="fkd-AR-bG7" secondAttribute="trailing" id="tZA-7z-QtP"/>
+                                    <constraint firstAttribute="bottom" secondItem="fkd-AR-bG7" secondAttribute="bottom" id="tsi-IO-SGU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Beauty">
-                                    <imageReference key="image" image="face.smiling" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="beautyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MNO-ww-KmH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdI-6b-Dnw">
-                                <rect key="frame" x="255" y="610" width="139" height="50"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="LaE-Ii-wzz"/>
-                                    <constraint firstAttribute="width" constant="139" id="xZJ-Lz-fAw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Filter">
-                                    <imageReference key="image" image="face.dashed.fill" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="filterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nzV-zP-FKX"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="console" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkG-vY-xyS">
-                                <rect key="frame" x="20" y="708" width="374" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="xGa-9C-E0Z"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udF-RM-RJ5">
-                                <rect key="frame" x="140" y="815" width="134" height="30"/>
-                                <state key="normal" title="Run Session"/>
-                                <connections>
-                                    <action selector="runSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pqW-38-P0x"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="udF-RM-RJ5" secondAttribute="trailing" constant="140" id="1dW-04-4pH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gkG-vY-xyS" secondAttribute="trailing" constant="20" id="5cS-rS-ozB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EdI-6b-Dnw" secondAttribute="trailing" constant="20" id="6Mv-bW-0Ez"/>
-                            <constraint firstItem="E2X-0S-GZi" firstAttribute="top" secondItem="tgo-H7-k6l" secondAttribute="bottom" constant="20" id="BZ7-Wp-S7i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uUn-5R-PC5" secondAttribute="trailing" constant="20" id="Bk8-eY-YNw"/>
                             <constraint firstItem="tgo-H7-k6l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FZL-Kv-cKQ"/>
-                            <constraint firstItem="E2X-0S-GZi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IhU-NV-5dc"/>
                             <constraint firstItem="CuG-fa-glH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="JKC-sg-IIx"/>
                             <constraint firstItem="lJ1-7m-Khx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="MzZ-UI-2wm"/>
-                            <constraint firstItem="udF-RM-RJ5" firstAttribute="top" secondItem="gkG-vY-xyS" secondAttribute="bottom" constant="35" id="OIQ-2b-4dU"/>
-                            <constraint firstItem="CuG-fa-glH" firstAttribute="leading" secondItem="lJ1-7m-Khx" secondAttribute="trailing" constant="10" id="Shr-dX-GaP"/>
+                            <constraint firstItem="CuG-fa-glH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lJ1-7m-Khx" secondAttribute="trailing" constant="8" symbolic="YES" id="Shr-dX-GaP"/>
                             <constraint firstItem="tgo-H7-k6l" firstAttribute="top" secondItem="lJ1-7m-Khx" secondAttribute="bottom" constant="7" id="WLi-1u-Gtc"/>
-                            <constraint firstItem="EdI-6b-Dnw" firstAttribute="top" secondItem="tgo-H7-k6l" secondAttribute="bottom" constant="19" id="WhL-BL-EZU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="udF-RM-RJ5" secondAttribute="bottom" constant="17" id="XDk-1O-zhc"/>
-                            <constraint firstItem="udF-RM-RJ5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="XEM-rc-ycB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CuG-fa-glH" secondAttribute="trailing" constant="117" id="ZMt-ux-MSJ"/>
+                            <constraint firstItem="uUn-5R-PC5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dNk-W0-PZ1"/>
+                            <constraint firstItem="uUn-5R-PC5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="enB-eM-YuY"/>
                             <constraint firstItem="tgo-H7-k6l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gkf-09-ImW"/>
-                            <constraint firstItem="gkG-vY-xyS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lJb-V2-hRb"/>
                             <constraint firstItem="lJ1-7m-Khx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="m98-pg-wCZ"/>
-                            <constraint firstItem="gkG-vY-xyS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s7D-7P-1ol"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="tgo-H7-k6l" id="ORp-cH-Bfd"/>
-                        <outlet property="consoleLabel" destination="gkG-vY-xyS" id="M5E-AG-rUH"/>
+                        <outlet property="chinBtn" destination="QD4-aE-mlV" id="fa7-fW-u1o"/>
+                        <outlet property="circlesBtn" destination="qOl-gb-0V5" id="bpb-dS-Q6T"/>
+                        <outlet property="controlsContainer" destination="uUn-5R-PC5" id="Jfq-c9-gQ8"/>
+                        <outlet property="eyesBtn" destination="pBz-Ee-0uA" id="A2s-NA-N5n"/>
+                        <outlet property="mouthBtn" destination="Ut8-BS-t2h" id="Lkn-a3-dnS"/>
+                        <outlet property="noseBtn" destination="uIU-Jd-enS" id="EFw-3A-NPS"/>
+                        <outlet property="skinBtn" destination="mUv-Dm-obT" id="We1-K4-xch"/>
+                        <outlet property="sliderControl" destination="hCo-Fg-C9N" id="gfa-N8-zRt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,14 +182,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="face.dashed.fill" catalog="system" width="128" height="121"/>
-        <image name="face.smiling" catalog="system" width="128" height="121"/>
+        <image name="chin" width="54" height="54"/>
+        <image name="chinOff" width="54" height="54"/>
+        <image name="darkCircle" width="54" height="54"/>
+        <image name="darkCircleOff" width="54" height="54"/>
+        <image name="eyesSize" width="54" height="54"/>
+        <image name="eyesSizeOff" width="54" height="54"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="gobackward" catalog="system" width="121" height="128"/>
+        <image name="mouth" width="54" height="54"/>
+        <image name="mouthOff" width="54" height="54"/>
+        <image name="nose" width="54" height="54"/>
+        <image name="noseOff" width="54" height="54"/>
+        <image name="skin" width="54" height="54"/>
+        <image name="skinOff" width="54" height="54"/>
         <namedColor name="AccentColor">
             <color red="0.16470588743686676" green="0.20392158627510071" blue="0.31372550129890442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

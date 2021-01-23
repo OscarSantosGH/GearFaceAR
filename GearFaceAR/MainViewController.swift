@@ -22,15 +22,25 @@ class MainViewController: UIViewController {
     private var arScene: ARGScene!
     
     @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var consoleLabel: UILabel!
+    @IBOutlet weak var controlsContainer: UIView!
+    @IBOutlet weak var sliderControl: UISlider!
+    
+    @IBOutlet weak var skinBtn: FilterButton!
+    @IBOutlet weak var chinBtn: FilterButton!
+    @IBOutlet weak var eyesBtn: FilterButton!
+    @IBOutlet weak var circlesBtn: FilterButton!
+    @IBOutlet weak var noseBtn: FilterButton!
+    @IBOutlet weak var mouthBtn: FilterButton!
+    
+    var selectedFilter: FilterType!
     
     private var currentARKitFrame: ARFrame?
-    
 
     override public func viewDidLoad() {
         super.viewDidLoad()
         startARSessions()
         setupScene()
+        configureFilterButtons()
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -42,6 +52,18 @@ class MainViewController: UIViewController {
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         argSession?.pause()
+    }
+    
+    func configureFilterButtons(){
+        skinBtn.filterType = .skin
+        chinBtn.filterType = .chin
+        eyesBtn.filterType = .eyes
+        circlesBtn.filterType = .circle
+        noseBtn.filterType = .nose
+        mouthBtn.filterType = .mouth
+        
+        skinBtn.isSelected = true
+        selectedFilter = .skin
     }
     
     
@@ -165,68 +187,93 @@ class MainViewController: UIViewController {
         }
     }
     
+    //MARK: - Controls
     
-    
-    @IBAction func runSession(_ sender: Any) {
-        //argSession?.run()
-    }
-    
-    @IBAction func beautyAction(_ sender: UIButton) {
+    @IBAction func sliderMoved(_ sender: UISlider) {
         guard let session = argSession, let contents = session.contents else {
             return
         }
         
-        if sender.isSelected {
-            contents.setBeautyOn(false)
-        } else {
-            contents.setBulge(.NONE)
-            contents.setDefaultBeauty()
+        switch selectedFilter {
+        case .skin:
+            skinBtn.filterValue = sender.value
+            contents.setBeauty(.skinFace, value: sender.value)
+        case .chin:
+            chinBtn.filterValue = sender.value
+            contents.setBeauty(.chin, value: sender.value)
+        case .eyes:
+            eyesBtn.filterValue = sender.value
+            contents.setBeauty(.eye, value: sender.value)
+        case .circle:
+            circlesBtn.filterValue = sender.value
+            contents.setBeauty(.skinDarkCircle, value: sender.value)
+        case .nose:
+            noseBtn.filterValue = sender.value
+            contents.setBeauty(.noseSise, value: sender.value)
+        case .mouth:
+            mouthBtn.filterValue = sender.value
+            contents.setBeauty(.mouthSize, value: sender.value)
+        case .none: break
             
-            // set beauty one value
-    //        contents.setBeauty(.faceSlim, value: 0.7)
-            
-            // set all beauties
-            let beautyValue: [Float] = [
-                10.0,
-                90.0,
-                55.0,
-                -50.0,
-                5.0,
-                -10.0,
-                0.0,
-                35.0,
-                30.0,
-                -35.0,
-                0.0,
-                0.0,
-                0.0,
-                50.0,
-                0.0,
-                0.0
-            ]
-
-            let beautyValuePointer = UnsafeMutablePointer<Float>.allocate(capacity: beautyValue.count)
-            beautyValuePointer.assign(from: beautyValue, count: beautyValue.count)
-            contents.setBeautyValues(beautyValuePointer)
-            beautyValuePointer.deallocate()
         }
-        sender.isSelected = !sender.isSelected
+        
     }
     
-    @IBAction func filterAction(_ sender: UIButton) {
+    @IBAction func resetFilter(_ sender: UIButton) {
         guard let session = argSession, let contents = session.contents else {
             return
         }
         
-        if sender.isSelected {
-            contents.clear(.filter)
-        } else {
+        sliderControl.value = 0.0
+        
+        switch selectedFilter {
+        case .skin:
+            skinBtn.filterValue = 0
+            contents.setBeauty(.skinFace, value: 0)
+        case .chin:
+            chinBtn.filterValue = 0
+            contents.setBeauty(.chin, value: 0)
+        case .eyes:
+            eyesBtn.filterValue = 0
+            contents.setBeauty(.eye, value: 0)
+        case .circle:
+            circlesBtn.filterValue = 0
+            contents.setBeauty(.skinDarkCircle, value: 0)
+        case .nose:
+            noseBtn.filterValue = 0
+            contents.setBeauty(.noseSise, value: 0)
+        case .mouth:
+            mouthBtn.filterValue = 0
+            contents.setBeauty(.mouthSize, value: 0)
+        case .none: break
             
-            // filter download (first)
-            NetworkManager.shared.downloadItem(url:"https://privatecontent.argear.io/contents/data/87942be0-f470-11e9-93ab-175806ecc470.zip", title:"azalea", type: "filter")
         }
-        sender.isSelected = !sender.isSelected
     }
+    
+    @IBAction func selectFilterAction(_ sender: FilterButton) {
+        skinBtn.isSelected = false
+        chinBtn.isSelected = false
+        eyesBtn.isSelected = false
+        circlesBtn.isSelected = false
+        noseBtn.isSelected = false
+        mouthBtn.isSelected = false
+        
+        switch selectedFilter {
+        case .skin, .circle, .nose:
+            sliderControl.minimumValue = 0
+            sliderControl.maximumValue = 100
+        case .chin, .eyes, .mouth:
+            sliderControl.minimumValue = -100
+            sliderControl.maximumValue = 100
+        case .none: break
+            
+        }
+        
+        sender.isSelected = true
+        selectedFilter = sender.filterType
+        sliderControl.value = sender.filterValue
+    }
+    
     
 }
 
