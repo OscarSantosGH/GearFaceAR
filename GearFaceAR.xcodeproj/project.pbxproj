@@ -17,6 +17,7 @@
 		839DE0072568A4F6007DAEC0 /* ARGearRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839DE0052568A4F1007DAEC0 /* ARGearRenderer.framework */; };
 		839DE0082568A4F6007DAEC0 /* ARGearRenderer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 839DE0052568A4F1007DAEC0 /* ARGearRenderer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		839DE00B2568A593007DAEC0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DE00A2568A593007DAEC0 /* NetworkManager.swift */; };
+		83C7A44825BB990D001FCB82 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C7A44725BB990D001FCB82 /* FilterButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		8356FB9D2565DD3A0055BDB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839DE0052568A4F1007DAEC0 /* ARGearRenderer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARGearRenderer.framework; sourceTree = "<group>"; };
 		839DE00A2568A593007DAEC0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		83C7A44725BB990D001FCB82 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				8356FB8F2565DD340055BDB2 /* AppDelegate.swift */,
 				8356FB912565DD340055BDB2 /* SceneDelegate.swift */,
 				8356FB932565DD340055BDB2 /* MainViewController.swift */,
+				83C7A44725BB990D001FCB82 /* FilterButton.swift */,
 				8356FB952565DD340055BDB2 /* Main.storyboard */,
 				8356FB982565DD3A0055BDB2 /* Assets.xcassets */,
 				8356FB9A2565DD3A0055BDB2 /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8356FB942565DD340055BDB2 /* MainViewController.swift in Sources */,
+				83C7A44825BB990D001FCB82 /* FilterButton.swift in Sources */,
 				834D991925677A0C0056444C /* ARGScene.swift in Sources */,
 				839DE00B2568A593007DAEC0 /* NetworkManager.swift in Sources */,
 				8356FB902565DD340055BDB2 /* AppDelegate.swift in Sources */,
